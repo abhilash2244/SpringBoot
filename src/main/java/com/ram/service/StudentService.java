@@ -2,8 +2,6 @@ package com.ram.service;
 
 public class StudentService {
 	public static String primeNumbers(int num1) {
-		System.out.println("Student service prime number");
-
 		int i = 0, j = 0;
 		String primeNumbers = "";
 		for (i = 1; i <= num1; i++) {
@@ -18,7 +16,6 @@ public class StudentService {
 				primeNumbers = primeNumbers + i + " ";
 			}
 		}
-		System.out.println(primeNumbers);
 		return primeNumbers;
 
 	}
