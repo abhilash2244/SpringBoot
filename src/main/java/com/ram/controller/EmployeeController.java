@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ram.model.Employee;
+import com.ram.model.add;
 import com.ram.service.EmployeeService;
+//import com.ram.service.Palindrome;
 import com.ram.service.StudentService;
+
+import springfox.documentation.spring.web.json.Json;
 
 @RestController
 public class EmployeeController {
@@ -43,4 +47,28 @@ public class EmployeeController {
 		}
 
 	}
+	
+	@PostMapping(value = "/Palindrome")
+	public String postData(@RequestBody int data ) {
+		System.out.println(data);
+		return EmployeeService.palindrome(data);
+	}
+	
+	@PostMapping(value = "/Addition")
+	public int addition(@RequestBody add data) {
+		System.out.println(data.getA());
+		System.out.println(data.getB());
+		return EmployeeService.addition(data);
+//		return 1;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
