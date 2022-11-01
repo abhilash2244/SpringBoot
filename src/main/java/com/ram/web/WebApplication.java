@@ -24,11 +24,21 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan({ "com.ram.*" })
 public class WebApplication implements CommandLineRunner {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
-    
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
 	public static void main(String[] args) {
 		SpringApplication.run(WebApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		String sql = "SELECT * FROM customer";
+		List<Customer> customers = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Customer.class));
+
+		customers.forEach(System.out::println);
+		System.out.println(customers);
+
 	}
 
 	@Bean
@@ -36,13 +46,5 @@ public class WebApplication implements CommandLineRunner {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("com.ram.controller")).build();
 	}
-    @Override
-    public void run(String... args) throws Exception {
-        String sql = "SELECT * FROM customers";
-        List<Customer> customers = jdbcTemplate.query(sql,
-                BeanPropertyRowMapper.newInstance(Customer.class));
-         
-        customers.forEach(System.out :: println);
-    }
 
 }
