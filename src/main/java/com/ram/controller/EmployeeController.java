@@ -12,11 +12,10 @@ import com.ram.service.EmployeeService;
 //import com.ram.service.Palindrome;
 import com.ram.service.StudentService;
 
-import springfox.documentation.spring.web.json.Json;
-
 @RestController
 public class EmployeeController {
-
+	
+	
 	@GetMapping(value = "/home")
 	public String home() {
 		return EmployeeService.initService();
