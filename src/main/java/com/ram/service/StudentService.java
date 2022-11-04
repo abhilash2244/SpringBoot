@@ -11,16 +11,16 @@ import com.ram.repository.StudentRepo;
 @Service
 public class StudentService {
 	
-	private final StudentRepo studentRepo;
+	private static StudentRepo studentRepo;
 	@Autowired
 	public StudentService (StudentRepo studentRepo) {
 		this.studentRepo = studentRepo;
 	}
 	
 	public static List<Student> getStudents(){
-		return List.of(new Student("sanath", "REddy", "sanat@gmail.com", 22));
+//		return List.of(new Student("sanath", "REddy", "sanat@gmail.com", 22));
 		
-//		return studentRepo.findAll();
+		return studentRepo.findAll();
 	}
 	
 	

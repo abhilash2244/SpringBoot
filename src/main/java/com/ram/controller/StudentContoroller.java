@@ -12,7 +12,7 @@ import com.ram.service.StudentService;
 @RestController
 public class StudentContoroller {
 
-	private final StudentService studentService;
+	private StudentService studentService;
 	
 	@Autowired
 	public StudentContoroller(StudentService studentService) {

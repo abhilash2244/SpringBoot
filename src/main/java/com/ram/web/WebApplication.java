@@ -40,7 +40,7 @@ public class WebApplication implements CommandLineRunner {
 //	@Bean
 //	CommandLineRunner commandLineRunner(StudentRepo studentRepo) {
 //		return args-> {
-//			Student sanath= new Student("sanath", "Reddy", "sanathreddy@gmail.com", 25);
+//			Student sanath= new Student("amri", "ishpuri", "amrishpuri@gmail.com", 22);
 //			studentRepo.save(sanath);
 //		};
 //	}

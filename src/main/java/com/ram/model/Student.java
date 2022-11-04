@@ -78,5 +78,9 @@ public class Student {
 		this.email = email;
 		this.age = age;
 	}
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 }
