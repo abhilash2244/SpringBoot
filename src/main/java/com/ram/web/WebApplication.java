@@ -25,7 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan({ "com.ram.*"})
+@ComponentScan(basePackages = {"com.ram.*","com.ram.service"})
 @EntityScan(basePackages={"com.ram.*"})
 @EnableJpaRepositories("com.ram.repository")
 public class WebApplication implements CommandLineRunner {

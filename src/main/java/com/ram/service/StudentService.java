@@ -1,6 +1,7 @@
 package com.ram.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,17 +24,15 @@ public class StudentService {
 		return studentRepo.findAll();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static void addNewStudent(Student student) {
+		Optional<Student> studentOptional = studentRepo.findStudentByEmail(student.getEmail());
+		if(studentOptional.isPresent()) {
+			throw new IllegalStateException("email received");
+		}
+		studentRepo.save(student);
+		System.out.println(student);
+		
+	}
 	
 	
 	
@@ -62,4 +61,5 @@ public class StudentService {
 		return primeNumbers;
 
 	}
+
 }
